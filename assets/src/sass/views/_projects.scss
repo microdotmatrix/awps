@@ -1,0 +1,16 @@
+#projects {
+  article {
+    .post-content {
+      .project-gallery {
+        @apply grid grid-cols-3;
+        &__image {
+          @apply relative w-full h-full overflow-hidden;
+          max-height: 300px;
+          > img {
+            @apply w-full h-full object-cover object-center;
+          }
+        }
+      }
+    }
+  }
+}

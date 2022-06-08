@@ -1,39 +1,24 @@
-/*--------------------------------------------------------------
-# Import Modules
---------------------------------------------------------------*/
-@import '~normalize-scss/sass/normalize/import-now';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
-@import 'base/variables';
-@import 'base/mixins';
-@import 'base/animations';
-@import 'base/body';
-@import 'base/containers';
-@import 'base/grid';
-@import 'base/spacing';
-@import 'base/wordpress';
-@import 'base/forms';
 
-/*--------------------------------------------------------------
-# Partials
---------------------------------------------------------------*/
-@import 'partials/typography';
-@import 'partials/buttons';
-@import 'partials/links';
-@import 'partials/colours';
-@import 'partials/helpers';
-@import 'partials/media';
+// Init Gerillass Library
+@import "~gerillass";
 
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-@import 'components/header';
-@import 'components/sidebar';
-@import 'components/footer';
+// Init Sass Mixins & Flex Grid Tools
+@import "toolkit/mixins",
+        "toolkit/flex-grid",
+        "toolkit/fonts";
 
-/*--------------------------------------------------------------
-# Pages
---------------------------------------------------------------*/
-@import 'pages/home';
+// Init Configuration Variables
+@import "config";
+
+@import "utilities/animations",
+        "utilities/classes";
+
+// Load component styles
+@import "components/global",
+        "components/media",
+        "components/typography",
+        "components/icons";

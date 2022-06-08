@@ -31,5 +31,10 @@
 		"test": ["@phpcs", "@parallel-lint"],
 		"phpcs": "phpcs",
 		"parallel-lint": "parallel-lint --blame --exclude vendor/ ."
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
 	}
 }

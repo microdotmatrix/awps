@@ -1,0 +1,30 @@
+// Reset Heading Tag Styles
+
+@mixin h-reset($font-size: $p, $font-weight: $text-weight, $margin-top: 0.8rem, $margin-bottom: 0.5rem) {
+	h1, h2, h3, h4, h5, h6 {
+    font-family: $text-font;
+		font-size: $font-size;
+		font-weight: $font-weight;
+		margin-top: $margin-top;
+    margin-bottom: $margin-bottom;
+		display: inline-block;
+	}
+}
+
+@mixin overlay-img($opacity: 0.5, $gradient: none, $color: #0a0b0c, $z: 0) {
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: $z;
+		opacity: $opacity;
+		width: 100%;
+		height: 100%;
+    background-color: $color;
+    background-image: $gradient;
+    transition: all 300ms linear;
+  }
+}

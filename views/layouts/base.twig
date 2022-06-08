@@ -1,0 +1,40 @@
+<!doctype html>
+	<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
+	<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
+	<!--[if gt IE 9]><!-->
+<html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
+	<head>
+		{% block meta %}
+			{% include 'partials/meta.twig' %}
+		{% endblock %}
+
+		{% block head %}
+			{{ function('wp_head') }}
+		{% endblock %}
+	</head>
+
+	<body class="{{body_class}}" data-template="base.twig">
+
+		{% block header %}
+			<header class="header">
+				{% include "partials/header.twig" %}
+			</header>
+		{% endblock %}
+
+		<main id="content" role="main">
+			<article class="container">
+				{% if title %}<h1>{{title}}</h1>{% endif %}
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</article>
+		</main>
+
+		{% block footer %}
+			<footer class="footer">
+				{% include 'partials/footer.twig' %}
+				{{ function('wp_footer') }}
+			</footer>
+		{% endblock %}
+	</body>
+</html>

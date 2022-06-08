@@ -1,3 +1,25 @@
-footer {
-	position: relative;
+#perihelion {
+  @apply border-t border-slate-400/20;
+  background: gradient(dark-seas);
+  background-size: 100%;
+  > footer {
+    @apply relative flex pt-9 pb-24;
+    section {
+      @apply flex-auto flex items-start;
+      &:last-child {
+        @apply justify-end;
+      }
+    }
+    .social-links {
+      ul {
+        @apply flex flex-row items-center justify-end gap-4 w-full;
+        li {
+          @apply flex justify-center;
+          a {
+            @apply block;
+          }
+        }
+      }
+    }
+  }
 }

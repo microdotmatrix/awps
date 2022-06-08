@@ -1,0 +1,79 @@
+$t: 1s;
+.hero {
+  --rgb-overlay-color: var(--gradient-6);
+  --rgb-overlay-blend: color-burn;
+  --rgb-overlay-opacity: 0.8;
+  @apply w-full relative;
+  clip-path: polygon(100% 0, 100% 100%, 50% 86%, 0 100%, 0 0);
+  &__image {
+    @apply w-full relative overflow-hidden -mt-10;
+    z-index: 1;
+    min-height: 420px;
+    background-size: 150%;
+    background-position: 0% 50%;
+    background-attachment: fixed;
+    filter: invert(0);
+    @extend %dark-filter;
+    img {
+      @apply w-full h-full object-cover object-center;
+    }
+  }
+  &__content {
+    @apply absolute top-1/2 w-full;
+    left: 6%;
+    z-index: 10;
+    .intro {
+      @apply absolute p-8 overflow-hidden;
+      background: rgba(#C0D7D8, 0.5);
+      width: 65%;
+      right: 10%;
+      top: 48%;
+    }
+  }
+  &__title {
+    font-size: $h2;
+  }
+  @include overlay-img(0.65, gradient(metallic-fade), transparent);
+  &::after {
+    background-size: 120%;
+    mix-blend-mode: color-burn;
+    backdrop-filter: blur(3px);
+  }
+  .breadcrumbs {
+    @apply absolute flex w-fit justify-center items-center z-10;
+    top: 70%;
+    left: 10%;
+    li {
+      @apply flex-auto uppercase px-4;
+      &::after {
+        content: ">";
+        margin-left: 0.75rem;
+      }
+      @include only(last) {
+        a { color: slate(1); }
+        &::after {
+          content: "";
+        }
+      }
+    }
+  }
+
+}
+
+#post-hero .hero {
+  &__image {
+    height: 69vh;
+  }
+}
+
+#page-hero .hero {
+  &__image {
+    height: 50vh;
+  }
+}
+
+#main-hero .hero {
+  &__image {
+    height: 80vh;
+  }
+}

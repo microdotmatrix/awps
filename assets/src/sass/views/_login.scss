@@ -1,0 +1,29 @@
+#login {
+  place-content: center;
+  .login-panel {
+    @apply relative flex flex-col justify-center items-start gap-4 w-1/3 mx-auto px-12 py-10 shadow-xl;
+    background: gradient(subtle-grey);
+    .email-field, .password-field {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.25rem;
+      label {
+        font-size: $sm;
+        font-weight: 400;
+      }
+      input {
+        font-size: $sm;
+        width: 100%;
+        outline: 1px solid slate(4);
+        padding: 12px 13px;
+        border-radius: 3px;
+      }
+    }
+    button[type="submit"] {
+      @apply mt-4 px-5 py-2;
+      background: gradient(sunset-purple);
+      opacity: 1;
+    }
+  }
+}

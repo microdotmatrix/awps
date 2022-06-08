@@ -1,0 +1,122 @@
+.content {
+  @apply relative flex flex-col w-full h-full m-0;
+  padding-top: $space;
+  padding-bottom: $space;
+}
+
+.featured-posts {
+  @apply relative flex flex-col w-full gap-16 my-12;
+  article {
+    @apply flex flex-col md:flex-row w-full items-center gap-0 md:gap-8;
+    @include breakpoint(min, medium) {
+      block-size: 450px;
+      @include only(even) {
+        flex-direction: row-reverse;
+        .post-image {
+          figure {
+            figcaption {
+              @apply bottom-0 right-0 pl-10 pr-8;
+              left: unset;
+            }
+          }
+        }
+        .card-content {
+          .summary {
+            left: unset;
+            right: -12%;
+          }
+        }
+      }
+    }
+    .post-image {
+      @apply m-0 p-0 md:p-8 basis-full;
+      @include breakpoint(min, medium) {
+        flex: 0 1 43%;
+      }
+      figure {
+        @apply relative m-0 p-0 overflow-hidden;
+        aspect-ratio: 6/5;
+        max-height: 560px;
+        &:hover {
+          img {
+            opacity: 1;
+            filter: grayscale(0);
+          }
+          &::after {
+            opacity: 0.25;
+          }
+        }
+        img {
+          @apply relative inline-block w-full h-full object-cover object-center;
+          opacity: 0.8;
+          filter: grayscale(0.6);
+          transition: all 300ms linear;
+        }
+        figcaption {
+          @apply absolute flex flex-col justify-end w-full h-full bottom-0 left-0 py-8 pl-8 pr-8;
+          z-index: 1;
+          background: linear-gradient(20deg, rgba(0,0,0,0.9) 0%, rgba(205,205,205,0) 100%);
+          //background: rgba(slate(8), 0.85);
+          span {
+            color: slate(5);
+            text-transform: uppercase;
+            font-weight: 400;
+          }
+          .post-title {
+            color: var(--color-accent);
+            font-size: $lg;
+            display: block;
+          }
+        }
+        @include overlay-img($opacity: 0.5);
+      }
+    }
+    .card-content {
+      @apply relative m-0 p-0 md:px-6 md:py-8;
+      @include breakpoint(min, medium) {
+        flex: 1 0 57%;
+      }
+      @include h-reset($font-weight: 500);
+      .summary {
+        @apply relative md:absolute md:left-[-12%] md:top-[-180%] px-12 py-4;
+        z-index: 1;
+        box-shadow: var(--shadow-3);
+        background: var(--color-container);
+        p {
+          font-size: var(--base);
+        }
+        .post-tags {
+          font-size: $sm;
+        }
+      }
+    }
+  }
+}
+
+.flex-contain-3 {
+  @include columnizer(3, 1rem, true);
+}
+
+.gallery-item {
+  @apply mx-auto overflow-hidden;
+  height: 550px;
+  img {
+    @apply w-full h-full object-contain object-center;
+    --_g: no-repeat linear-gradient(#000 0 0);
+    --_s: 10% /45% 45%;
+    --m:
+      var(--_g) left   var(--_i,0%) top    var(--_s),
+      var(--_g) bottom var(--_i,0%) left   var(--_s),
+      var(--_g) top    var(--_i,0%) right  var(--_s),
+      var(--_g) right  var(--_i,0%) bottom var(--_s);
+    -webkit-mask: var(--m);
+            mask: var(--m);
+    filter: grayscale(1);
+    transition: .3s linear;
+  }
+  img:hover {
+    --_i: 10%;
+    filter: grayscale(0);
+  }
+}
+

@@ -1,0 +1,50 @@
+.hidden,
+.visuallyhidden,
+.hide {
+  display: none;
+  visibility: hidden;
+  backface-visibility: hidden;
+  border: 0;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+:root {
+  --rgb-overlay-opacity: 1;
+  --rgb-overlay-color: rgba(slate(5), 0.5);
+  --rgb-overlay-blend: color-burn;
+}
+
+.rgb-overlay {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: var(--rgb-overlay-opacity);
+  background: var(--rgb-overlay-color);
+  mix-blend-mode: var(--rgb-overlay-blend);
+  filter:  grayscale(50%) invert(0);
+  animation-name: hueRotator;
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  @extend %dark-filter;
+}

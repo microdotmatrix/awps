@@ -1,0 +1,189 @@
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		 animation-duration: 0.01ms !important;
+		 animation-iteration-count: 1 !important;
+		 transition-duration: 0.01ms !important;
+		 scroll-behavior: auto !important;
+	}
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 118.2%;
+}
+
+body {
+  color: var(--color-text);
+  font-size: var(--base);
+  font-family: $text-font;
+  font-weight: $text-weight;
+  background: var(--color-background);
+  background-size: 200%;
+  background-attachment: fixed;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  scroll-behavior: smooth;
+	@apply flex flex-col w-full;
+  min-height: 100vh; // or min-height: calc(100vh - 80px); - depending on your prefferences
+}
+
+html.trans,
+html.trans *,
+html.trans *:before,
+html.trans *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+.dark {
+  %dark-filter {
+    transition: all 600ms linear;
+    filter: grayscale(70%) invert(1);
+  }
+}
+
+.active-dark {
+  @apply relative inline-block w-14 h-6 border border-slate-800 rounded-xl;
+  will-change: background-color;
+  transition: background-color 100ms ease(in-out-quad);
+  &::after {
+    content: '';
+    @apply absolute top-1/2 left-1 block w-4 h-4 border border-slate-800 rounded-lg;
+    transform: translateY(-50%);
+    transition: left 100ms ease(in-out-quad);
+  }
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label[for="switch"] {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 55px;
+  height: 30px;
+  background: var(--color-theme-switch);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  position: relative;
+}
+
+label[for="switch"]:after {
+  content: '';
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+}
+
+input:checked + label[for="switch"] {
+  background: #FFBD07;
+}
+
+input:checked + label[for="switch"]:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+a[href] {
+  position: relative;
+  color: var(--color-link);
+  text-decoration: none;
+  font-weight: 555;
+  transition: all 300ms ease;
+  &:hover,
+  &:focus {
+    color: var(--color-link-hover);
+    text-decoration: none;
+    font-weight: 777;
+  }
+}
+
+p a[href] {
+  font-weight: 555;
+  &:hover,
+  &:focus {
+    font-weight: 600;
+  }
+}
+
+.loading * {
+  display: none;
+}
+
+.loaded .dots-loader {
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transform: scale(0);
+}
+
+.dots-loader:not(:required) {
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -4px;
+  margin-top: -4px;
+  text-indent: -9999px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: transparent;
+  border-radius: 100%;
+  box-shadow: #f86 -14px -14px 0 7px, #fc6 14px -14px 0 7px, #6d7 14px 14px 0 7px, #4ae -14px 14px 0 7px;
+  animation: dots-loader 4s infinite ease-in-out;
+  transform-origin: 50% 50%;
+  transform: scale(1);
+  transition: .3s all;
+}
+
+#aphelion, #perihelion {
+  @apply w-full;
+}
+
+#foci {
+  @apply relative w-full h-full flex flex-col place-content-center;
+  // background-color: var(--color-container);
+  flex: 1;
+  > main {
+    @apply flex flex-col w-full h-full pt-12 pb-8;
+  }
+}
+
+.container {
+  @apply px-2;
+  @include adaptive($space);
+}
+
+.activate {
+  background: gradient(morpheus);
+  transition: all 500ms ease;
+}

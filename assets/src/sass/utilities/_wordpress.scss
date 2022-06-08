@@ -1,37 +1,39 @@
+$gutter: 10px;
+
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
-	margin: ($gutter / 2) ($gutter * 2) ($gutter * 2) 0;
+	margin: calc(#{$gutter} / 2) calc(#{$gutter} * 2) calc(#{$gutter} * 2) 0;
 }
 
 .aligncenter,
 div.aligncenter {
 	display: block;
-	margin: ($gutter / 2) auto ($gutter / 2) auto;
+	margin: calc(#{$gutter} / 2) auto calc(#{$gutter} / 2) auto;
 }
 
 .alignright {
 	float: right;
-	margin: ($gutter / 2) 0 ($gutter * 2) ($gutter * 2);
+	margin: calc(#{$gutter} / 2) 0 calc(#{$gutter} * 2) calc(#{$gutter} * 2);
 }
 
 .alignleft {
 	float: left;
-	margin: ($gutter / 2) ($gutter * 2) ($gutter * 2) 0;
+	margin: calc(#{$gutter} / 2) calc(#{$gutter} * 2) calc(#{$gutter} * 2) 0;
 }
 
 a img.alignright {
 	float: right;
-	margin: ($gutter / 2) 0 ($gutter * 2) ($gutter * 2);
+	margin: calc(#{$gutter} / 2) 0 calc(#{$gutter} * 2) calc(#{$gutter} * 2);
 }
 
 a img.alignnone {
-	margin: ($gutter / 2) ($gutter * 2) ($gutter * 2) 0;
+	margin: calc(#{$gutter} / 2) calc(#{$gutter} * 2) calc(#{$gutter} * 2) 0;
 }
 
 a img.alignleft {
 	float: left;
-	margin: ($gutter / 2) ($gutter * 2) ($gutter * 2) 0;
+	margin: calc(#{$gutter} / 2) calc(#{$gutter} * 2) calc(#{$gutter} * 2) 0;
 }
 
 a img.aligncenter {
@@ -51,15 +53,15 @@ a img.aligncenter {
 }
 
 .wp-caption.alignnone {
-	margin: ($gutter / 2) ($gutter * 2) ($gutter * 2) 0;
+	margin: calc(#{$gutter} / 2) calc(#{$gutter} * 2) calc(#{$gutter} * 2) 0;
 }
 
 .wp-caption.alignleft {
-	margin: ($gutter / 2) ($gutter * 2) ($gutter * 2) 0;
+	margin: calc(#{$gutter} / 2) calc(#{$gutter} * 2) calc(#{$gutter} * 2) 0;
 }
 
 .wp-caption.alignright {
-	margin: ($gutter / 2) 0 ($gutter * 2) ($gutter * 2);
+	margin: calc(#{$gutter} / 2) 0 calc(#{$gutter} * 2) calc(#{$gutter} * 2);
 }
 
 .wp-caption img {
