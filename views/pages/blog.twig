@@ -1,0 +1,15 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+	<div id="blog">
+		<header class="blog-header">
+			<h3>Hits from the Blog...</h3>
+			{{ content }}
+		</header>
+		<section class="post-list">
+			{% for post in posts %}
+				{% include ['partials/tease-'~post.post_type~'.twig', 'partials/tease.twig'] %}
+			{% endfor %}
+		</section>
+	</div>
+{% endblock %}

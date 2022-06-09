@@ -39,7 +39,7 @@ mix.options({
 });
 
 mix.browserSync({
-	proxy: process.env.WP_SITEURL,
+	proxy: 'http://wordup.wtf',
 	files: [
 		'views/**/*.twig',
 		'assets/dist/**/*.(css|js)',
