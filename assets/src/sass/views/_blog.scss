@@ -1,0 +1,32 @@
+#blog {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $homenaje;
+		font-weight: 500;
+		> a {
+			font-weight: 500;
+		}
+  }
+  header.post-header {
+    .date {
+      font-size: $lg;
+      text-transform: uppercase;
+    }
+  }
+  article.post-content {
+    @apply py-10;
+  }
+  section.posts {
+    @include columnizer(2, true);
+    .post-card {
+      @apply relative flex flex-col justify-start;
+      .summary {
+        @include h-reset($font-weight: 500);
+        width: 100%;
+
+      }
+    }
+  }
+  .post-pagination {
+    @apply flex justify-between py-12;
+  }
+}

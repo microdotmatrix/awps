@@ -1,9 +1,11 @@
 {% extends "partials/tease.twig" %}
 
 {% block content %}
-	<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
-		<p>{{post.preview.length(25)}}</p>
+	<h3><a href="{{post.link}}">{{post.title}}</a></h3>
 		{% if post.thumbnail.src %}
-			<img src="{{post.thumbnail.src}}" />
+		<figure class="preview-image">
+			<img src="{{post.thumbnail.src}}">
+		</figure>
 		{% endif %}
+		<p>{{post.preview.length(25)}}</p>
 {% endblock %}

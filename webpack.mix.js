@@ -42,7 +42,7 @@ mix.browserSync({
 	proxy: 'http://wordup.wtf',
 	files: [
 		'views/**/*.twig',
-		'assets/dist/**/*.(css|js)',
+		'assets/src/**/*.(scss|js)',
 	],
 	// Option to open in non default OS browser.
 	// browser: "firefox",

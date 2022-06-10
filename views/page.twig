@@ -3,12 +3,12 @@
 {% set home = value %}
 
 {% block content %}
-	<article class="post-type-{{post.post_type}}" id="{{post.slug}}">
-		<section class="article-content">
-			<h1 class="post-title">{{post.title}}</h1>
-			<div class="article-body">
+	<article class="{{post.post_type}}" id="{{post.slug}}">
+		<section class="{{post.post_type}}__content">
+			<h1 class="{{post.post_type}}__title">{{post.title}}</h1>
+			<article>
 				{{post.content}}
-			</div>
+			</article>
 		</section>
 	</article>
 {% endblock %}

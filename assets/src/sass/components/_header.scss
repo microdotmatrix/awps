@@ -1,52 +1,53 @@
-#aphelion {
-  @apply absolute w-full z-50;
-  header {
-    @apply relative flex items-center w-full py-4;
-    .title {
-      @apply flex-none flex items-center;
-      &__name {
-        font-family: $montsub;
-        font-size: $xl;
-        text-transform: uppercase;
-        margin-left: 1rem;
-      }
-    }
-    .nav {
-      @apply flex-1;
-      .menu {
-        @apply flex flex-1 w-full justify-end pr-10;
-        ul {
-          @apply flex items-center justify-end gap-10;
-          li {
-            a {
-              font-size: $md;
-              font-family: $strait;
-              font-weight: 500;
-              &.current {
-                color: ocCyan(5);
-              }
-            }
-          }
-          .user {
-            span {
-              font-size: $sm;
-              display: block;
-            }
-            a {
-              font-size: $sm;
-            }
-          }
-        }
-      }
-    }
-    .theme {
-      @apply relative flex items-center justify-center;
-      flex: 1;
-      line-height: 0;
-      .dark-mode {
-        @apply flex flex-row justify-center items-center gap-1;
-        margin-top: -6px;
-      }
-    }
-  }
+#alpha {
+	@apply absolute top-0 left-0 w-full;
+	z-index: 100;
+	header {
+		@apply relative flex items-center w-full py-4;
+		.title {
+			@apply flex-none flex items-center;
+			&__name {
+				font-family: $montsub;
+				font-size: $xl;
+				text-transform: uppercase;
+				margin-left: 1rem;
+			}
+		}
+		.nav {
+			@apply flex-1;
+			.menu {
+				@apply flex flex-1 w-full justify-end pr-10;
+				ul {
+					@apply flex items-center justify-end gap-10;
+					li {
+						a {
+							font-size: $md;
+							font-family: $saira;
+							font-weight: 500;
+							&.current {
+								color: ocCyan(5);
+							}
+						}
+					}
+					.user {
+						span {
+							font-size: $sm;
+							display: block;
+						}
+						a {
+							font-size: $sm;
+						}
+					}
+				}
+			}
+		}
+		.theme {
+			@apply relative flex items-center justify-center;
+			flex: 1;
+			line-height: 0;
+			.dark-mode {
+				@apply flex flex-row justify-center items-center gap-1;
+				margin-top: -6px;
+			}
+		}
+	}
 }

@@ -16,24 +16,26 @@
 	<body class="{{body_class}}" data-template="base.twig">
 
 		{% block header %}
-			<header class="header">
+			<div id="alpha">
 				{% include "partials/header.twig" %}
-			</header>
+			</div>
 		{% endblock %}
 
-		<main id="content" role="main">
-			<article class="container">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-			</article>
-		</main>
+		<div id="view">
+			<main id="content" role="main">
+				<article class="container">
+					{% block content %}
+						Sorry, no content
+					{% endblock %}
+				</article>
+			</main>
+		</div>
 
 		{% block footer %}
-			<footer class="footer">
+			<div id="omega">
 				{% include 'partials/footer.twig' %}
 				{{ function('wp_footer') }}
-			</footer>
+			</div>
 		{% endblock %}
 	</body>
 </html>

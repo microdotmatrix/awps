@@ -21,6 +21,9 @@
 @import "components/global",
         "components/media",
         "components/typography",
-        "components/icons";
+        "components/icons",
+				"components/header",
+				"components/footer";
 
-@import "views/home";
+@import "views/home",
+				"views/blog";

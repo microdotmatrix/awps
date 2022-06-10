@@ -1,9 +1,10 @@
-<div class="container">
-	<h1 class="hdr-logo" role="banner">
-		<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-	</h1>
-	<nav id="nav-main" class="nav-main" role="navigation">
-		{% include "partials/menu.twig" with {'items': menu.get_items} %}
-	</nav><!-- #nav -->
-</div>
-
+<header class="container">
+	<section class="title">
+		<a href="{{site.url}}" class="title__name" rel="home">{{site.name}}</a>
+	</section>
+	<section class="nav">
+		<nav id="nav-main" class="menu" role="navigation">
+			{% include "partials/menu.twig" with {'items': menu.get_items} %}
+		</nav>
+	</section>
+</header>
